@@ -20,7 +20,7 @@ Sau khi tạo môi trường Elastic Beanstalk với ứng dụng mẫu ở Ph�
    - Truy cập application của bạn (đã tạo ở 3.1)
    - Chọn environment của bạn
 
-![Environment Dashboard]({{< relref "/" >}}images/3.deployapp/0030.png)
+![Environment Dashboard](/eb-workshop-2025/images/3.deployapp/0030.png)
 
 2. **Upload và Deploy**
    - Click nút **Upload and deploy**
@@ -29,14 +29,14 @@ Sau khi tạo môi trường Elastic Beanstalk với ứng dụng mẫu ở Ph�
    - **Version label**: Nhập `v1.0` (hoặc tên phiên bản bạn muốn)
    - Click **Deploy**
 
-![Trang chủ ứng dụng]({{< relref "/" >}}images/3.deployapp/0032.png)
+![Trang chủ ứng dụng](/eb-workshop-2025/images/3.deployapp/0032.png)
 
 3. **Theo dõi quá trình Deploy**
    - Xem phần **Events**
    - Deploy thường mất 2-5 phút
    - Đợi health status trở về **Ok** (màu xanh)
 
-![Trang About]({{< relref "/" >}}images/3.deployapp/0033.png)
+![Trang About](/eb-workshop-2025/images/3.deployapp/0033.png)
 
 {{% notice tip %}}
 Trong quá trình deploy, environment status sẽ hiển thị "Updating". Đừng lo lắng, đây là bình thường!
@@ -47,7 +47,7 @@ Trong quá trình deploy, environment status sẽ hiển thị "Updating". Đừ
    - Click vào **Domain** URL
    - Bạn sẽ thấy ứng dụng Flask tùy chỉnh với thông tin sinh viên của bạn
 
-![API Info Response]({{< relref "/" >}}images/3.deployapp/0034.png)
+![API Info Response](/eb-workshop-2025/images/3.deployapp/0034.png)
 
 {{% notice success %}}
 **Chúc mừng!** Ứng dụng Flask tùy chỉnh của bạn đã chạy trên AWS Elastic Beanstalk. Hãy chụp màn hình ứng dụng để làm tài liệu.

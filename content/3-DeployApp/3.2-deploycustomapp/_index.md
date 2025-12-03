@@ -20,7 +20,7 @@ After creating the Elastic Beanstalk environment with sample application in Sect
    - Navigate to your application (created in 3.1)
    - Select your environment
 
-![Environment Dashboard]({{< relref "/" >}}images/3.deployapp/0030.png)
+![Environment Dashboard](/eb-workshop-2025/images/3.deployapp/0030.png)
 
 2. **Upload and Deploy**
    - Click **Upload and deploy** button
@@ -29,14 +29,14 @@ After creating the Elastic Beanstalk environment with sample application in Sect
    - **Version label**: Enter `v1.0` (or your preferred version name)
    - Click **Deploy**
 
-![Application Home Page]({{< relref "/" >}}images/3.deployapp/0032.png)
+![Application Home Page](/eb-workshop-2025/images/3.deployapp/0032.png)
 
 3. **Monitor Deployment**
    - Watch the **Events** section
    - Deployment typically takes 2-5 minutes
    - Wait for health status to return to **Ok** (green)
 
-![About Page]({{< relref "/" >}}images/3.deployapp/0033.png)
+![About Page](/eb-workshop-2025/images/3.deployapp/0033.png)
 
 {{% notice tip %}}
 During deployment, the environment status will show "Updating". Don't worry, this is normal!
@@ -47,7 +47,7 @@ During deployment, the environment status will show "Updating". Don't worry, thi
    - Click on the **Domain** URL
    - You should see your custom Flask application with your student information
 
-![API Info Response]({{< relref "/" >}}images/3.deployapp/0034.png)
+![API Info Response](/eb-workshop-2025/images/3.deployapp/0034.png)
 
 {{% notice success %}}
 **Congratulations!** Your custom Flask application is now running on AWS Elastic Beanstalk. Take screenshots of your application for documentation.

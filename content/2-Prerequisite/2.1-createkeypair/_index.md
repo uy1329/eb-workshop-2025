@@ -23,7 +23,7 @@ An EC2 Key Pair is used to securely connect to EC2 instances via SSH. Although t
 
 3. **Configure the Key Pair**
 
-![Create Key Pair]({{< relref "/" >}}images/2.prerequisite/0003.png)
+![Create Key Pair](/eb-workshop-2025/images/2.prerequisite/0003.png)
 
 Fill in the following information:
 

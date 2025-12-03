@@ -16,7 +16,7 @@ Trong phần này, chúng ta sẽ tạo môi trường Elastic Beanstalk và dep
 2. Tìm kiếm **Elastic Beanstalk** trong thanh tìm kiếm
 3. Click vào **Create application**
 
-![Create Application]({{< relref "/" >}}images/3.deployapp/0001.png)
+![Create Application](/eb-workshop-2025/images/3.deployapp/0001.png)
 
 ### Bước 2: Cấu hình Environment
 
@@ -24,7 +24,7 @@ Trong phần này, chúng ta sẽ tạo môi trường Elastic Beanstalk và dep
 2. **Application name**: Nhập tên ứng dụng, ví dụ: `elastic-beanstalk-demo`
 3. **Environment name**: Tự động tạo hoặc tùy chỉnh, ví dụ: `Elastic-beanstalk-demo-env`
 
-![Configure Environment]({{< relref "/" >}}images/3.deployapp/0002.png)
+![Configure Environment](/eb-workshop-2025/images/3.deployapp/0002.png)
 
 4. **Platform**: Chọn **Python**
 5. **Platform branch**: Chọn **Python 3.14 running on 64bit Amazon Linux 2023**
@@ -33,7 +33,7 @@ Trong phần này, chúng ta sẽ tạo môi trường Elastic Beanstalk và dep
    - Chúng ta sẽ deploy ứng dụng mẫu của AWS để test
    - Sau đó sẽ deploy ứng dụng Flask tùy chỉnh ở Section 3.2
 
-![Platform Selection]({{< relref "/" >}}images/3.deployapp/0003.png)
+![Platform Selection](/eb-workshop-2025/images/3.deployapp/0003.png)
 
 8. **Presets**: Chọn **Single instance (free tier eligible)**
    - Phù hợp cho môi trường test/học tập
@@ -42,7 +42,7 @@ Trong phần này, chúng ta sẽ tạo môi trường Elastic Beanstalk và dep
 
 {{% notice warning %}}**Workshop này sử dụng Single Instance mode** (không có Load Balancer). Nếu bạn muốn môi trường production với Load Balancer, xem phần "Nâng cấp lên Load Balanced Mode" bên dưới.{{% /notice %}}
 
-![Presets]({{< relref "/" >}}images/3.deployapp/0004.png)
+![Presets](/eb-workshop-2025/images/3.deployapp/0004.png)
 
 #### 💡 Nâng cấp lên Load Balanced Mode (Tùy chọn)
 
@@ -79,25 +79,25 @@ Nếu bạn muốn triển khai production environment với Load Balancer:
 
 Nếu bạn chưa có Service role:
 
-![Service Access Empty]({{< relref "/" >}}images/3.deployapp/0005.png)
+![Service Access Empty](/eb-workshop-2025/images/3.deployapp/0005.png)
 
 1. Chọn **Create and use new service role**
 
-![Create Service Role]({{< relref "/" >}}images/3.deployapp/0006.png)
+![Create Service Role](/eb-workshop-2025/images/3.deployapp/0006.png)
 
 2. AWS tự động tạo role với tên `aws-elasticbeanstalk-service-role`
 
-![Service Role Creating]({{< relref "/" >}}images/3.deployapp/0007.png)
+![Service Role Creating](/eb-workshop-2025/images/3.deployapp/0007.png)
 
 3. Role sẽ có các policies:
    - `AWSElasticBeanstalkEnhancedHealth`
    - `AWSElasticBeanstalkManagedUpdatesCustomerRolePolicy`
 
-![Service Role Policies]({{< relref "/" >}}images/3.deployapp/0008.png)
+![Service Role Policies](/eb-workshop-2025/images/3.deployapp/0008.png)
 
 4. Sau khi tạo, chọn role vừa tạo trong dropdown
 
-![Service Role Selected]({{< relref "/" >}}images/3.deployapp/0009.png)
+![Service Role Selected](/eb-workshop-2025/images/3.deployapp/0009.png)
 
 **EC2 Instance Profile**
 
@@ -105,22 +105,22 @@ Nếu bạn chưa có EC2 instance profile:
 
 1. Chọn **Create and use new EC2 instance profile**
 
-![Create Instance Profile]({{< relref "/" >}}images/3.deployapp/0010.png)
+![Create Instance Profile](/eb-workshop-2025/images/3.deployapp/0010.png)
 
 2. AWS tự động tạo instance profile với tên `aws-elasticbeanstalk-ec2-role`
 
-![Instance Profile Creating]({{< relref "/" >}}images/3.deployapp/0011.png)
+![Instance Profile Creating](/eb-workshop-2025/images/3.deployapp/0011.png)
 
 3. Instance profile sẽ có các policies:
    - `AWSElasticBeanstalkWebTier`
    - `AWSElasticBeanstalkWorkerTier`
    - `AWSElasticBeanstalkMulticontainerDocker`
 
-![Instance Profile Policies]({{< relref "/" >}}images/3.deployapp/0012.png)
+![Instance Profile Policies](/eb-workshop-2025/images/3.deployapp/0012.png)
 
 4. Sau khi tạo, chọn instance profile trong dropdown
 
-![Instance Profile Selected]({{< relref "/" >}}images/3.deployapp/0013.png)
+![Instance Profile Selected](/eb-workshop-2025/images/3.deployapp/0013.png)
 
 **EC2 Key Pair**
 
@@ -128,7 +128,7 @@ Nếu bạn chưa có EC2 instance profile:
    - Key pair này đã tạo ở Section 2.1
    - Dùng để SSH vào EC2 instance nếu cần troubleshoot
 
-![Key Pair Selected]({{< relref "/" >}}images/3.deployapp/0014.png)
+![Key Pair Selected](/eb-workshop-2025/images/3.deployapp/0014.png)
 
 2. Click **Next** để cấu hình networking
 
@@ -145,7 +145,7 @@ Nếu bạn chưa có EC2 instance profile:
 3. **Instance subnets**: Chọn một availability zone
    - Ví dụ: `ap-southeast-2a` với subnet `172.31.0.0/20`
 
-![Networking Configuration]({{< relref "/" >}}images/3.deployapp/0015.png)
+![Networking Configuration](/eb-workshop-2025/images/3.deployapp/0015.png)
 
 **Database và Tags**
 
@@ -154,7 +154,7 @@ Nếu bạn chưa có EC2 instance profile:
 
 2. **Tags**: Để trống (tùy chọn)
 
-![Database and Tags]({{< relref "/" >}}images/3.deployapp/0016.png)
+![Database and Tags](/eb-workshop-2025/images/3.deployapp/0016.png)
 
 3. Click **Next** để cấu hình instance
 
@@ -168,7 +168,7 @@ Nếu bạn chưa có EC2 instance profile:
 4. **IMDSv1**: **Disabled** (khuyến nghị)
 5. **IMDSv2**: Enabled
 
-![Instance Configuration]({{< relref "/" >}}images/3.deployapp/0017.png)
+![Instance Configuration](/eb-workshop-2025/images/3.deployapp/0017.png)
 
 **Capacity**
 
@@ -176,7 +176,7 @@ Nếu bạn chưa có EC2 instance profile:
 2. **Fleet composition**: On-Demand instances
 3. **Architecture**: x86_64
 
-![Capacity]({{< relref "/" >}}images/3.deployapp/0018.png)
+![Capacity](/eb-workshop-2025/images/3.deployapp/0018.png)
 
 4. **Instance types**: Chỉ chọn `t3.micro`
    - Xóa `t3.small` nếu có (không thuộc free tier)
@@ -187,7 +187,7 @@ Nếu bạn chưa có EC2 instance profile:
 
 5. **AMI ID**: Để mặc định (Amazon Linux 2023 cho Python)
 
-![Instance Types]({{< relref "/" >}}images/3.deployapp/0019.png)
+![Instance Types](/eb-workshop-2025/images/3.deployapp/0019.png)
 
 6. Click **Next** để cấu hình monitoring
 
@@ -198,7 +198,7 @@ Nếu bạn chưa có EC2 instance profile:
 1. **Health reporting**: Enhanced
 2. **CloudWatch Logs**: Disabled (để tiết kiệm chi phí)
 
-![Monitoring]({{< relref "/" >}}images/3.deployapp/0020.png)
+![Monitoring](/eb-workshop-2025/images/3.deployapp/0020.png)
 
 **Managed Platform Updates**
 
@@ -206,7 +206,7 @@ Nếu bạn chưa có EC2 instance profile:
 2. **Update window**: Tuesday, 19:45 UTC, 1 hour
 3. **Update level**: Minor and patch
 
-![Managed Updates]({{< relref "/" >}}images/3.deployapp/0021.png)
+![Managed Updates](/eb-workshop-2025/images/3.deployapp/0021.png)
 
 **Rolling Updates và Deployments**
 
@@ -214,7 +214,7 @@ Nếu bạn chưa có EC2 instance profile:
    - Deploy tất cả instances cùng lúc
    - Có downtime ngắn
 
-![Rolling Updates]({{< relref "/" >}}images/3.deployapp/0022.png)
+![Rolling Updates](/eb-workshop-2025/images/3.deployapp/0022.png)
 
 **Platform Software**
 
@@ -223,7 +223,7 @@ Nếu bạn chưa có EC2 instance profile:
 3. **Logs retention**: 7 days
 4. **NumThreads**: 15
 
-![Platform Software]({{< relref "/" >}}images/3.deployapp/0023.png)
+![Platform Software](/eb-workshop-2025/images/3.deployapp/0023.png)
 
 5. Click **Next** để review
 
@@ -245,13 +245,13 @@ Khi environment tạo xong:
 1. **Health status**: Ok (màu xanh)
 2. **Domain URL**: Hiển thị URL công khai
 
-![Environment Created]({{< relref "/" >}}images/3.deployapp/0030.png)
+![Environment Created](/eb-workshop-2025/images/3.deployapp/0030.png)
 
 3. Click vào **Domain** để truy cập ứng dụng
 
 Bạn sẽ thấy trang chào mừng của AWS Elastic Beanstalk sample application.
 
-![Sample App Running]({{< relref "/" >}}images/3.deployapp/0031.png)
+![Sample App Running](/eb-workshop-2025/images/3.deployapp/0031.png)
 
 {{% notice success %}}
 **Chúc mừng!** Environment Elastic Beanstalk đã sẵn sàng. Bây giờ chúng ta có thể deploy ứng dụng Flask tùy chỉnh ở Section 3.2.
