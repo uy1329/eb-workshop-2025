@@ -23,7 +23,7 @@ EC2 Key Pair được sử dụng để kết nối an toàn đến EC2 instance
 
 3. **Cấu hình Key Pair**
 
-![Tạo Key Pair](/images/2.prerequisite/0003.png)
+![Tạo Key Pair]({{< relref "/" >}}images/2.prerequisite/0003.png)
 
 Điền các thông tin sau:
 

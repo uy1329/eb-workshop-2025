@@ -66,7 +66,7 @@ pre : " <b> 1. </b> "
 
 **Architecture Diagram:**
 
-![AWS Elastic Beanstalk Architecture](/images/1.introduce/architecture.png)
+![AWS Elastic Beanstalk Architecture]({{< relref "/" >}}images/1.introduce/architecture.png)
 
 **Component Explanation:**
 

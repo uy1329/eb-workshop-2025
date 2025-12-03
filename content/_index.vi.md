@@ -10,7 +10,7 @@ chapter : false
 
 Trong bài lab này, bạn sẽ tìm hiểu các khái niệm cơ bản và thực hành triển khai ứng dụng web sử dụng AWS Elastic Beanstalk. Bạn sẽ học cách tạo môi trường Elastic Beanstalk, triển khai code ứng dụng của bạn, và giám sát tình trạng ứng dụng.
 
-![Elastic Beanstalk](/images/arc-01.png) 
+![Elastic Beanstalk]({{< relref "/" >}}images/arc-01.png) 
 
 ### Nội dung
 

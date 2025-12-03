@@ -66,7 +66,7 @@ pre : " <b> 1. </b> "
 
 **Sơ đồ Kiến trúc:**
 
-![AWS Elastic Beanstalk Architecture](/images/1.introduce/architecture.png)
+![AWS Elastic Beanstalk Architecture]({{< relref "/" >}}images/1.introduce/architecture.png)
 
 **Giải thích các thành phần:**
 

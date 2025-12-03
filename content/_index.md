@@ -10,7 +10,7 @@ chapter : false
 
 In this lab, you'll learn the basics and practice deploying a web application using AWS Elastic Beanstalk. You will learn how to create an Elastic Beanstalk environment, deploy your application code, and monitor the application health.
 
-![Elastic Beanstalk](/images/arc-01.png) 
+![Elastic Beanstalk]({{< relref "/" >}}images/arc-01.png) 
 
 ### Content
 

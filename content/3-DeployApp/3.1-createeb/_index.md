@@ -16,7 +16,7 @@ In this section, we will create an Elastic Beanstalk environment and deploy a sa
 2. Search for **Elastic Beanstalk** in the search bar
 3. Click **Create application**
 
-![Create Application](/images/3.deployapp/0001.png)
+![Create Application]({{< relref "/" >}}images/3.deployapp/0001.png)
 
 ### Step 2: Configure Environment
 
@@ -24,7 +24,7 @@ In this section, we will create an Elastic Beanstalk environment and deploy a sa
 2. **Application name**: Enter application name, example: `elastic-beanstalk-demo`
 3. **Environment name**: Auto-generated or customize, example: `Elastic-beanstalk-demo-env`
 
-![Configure Environment](/images/3.deployapp/0002.png)
+![Configure Environment]({{< relref "/" >}}images/3.deployapp/0002.png)
 
 4. **Platform**: Select **Python**
 5. **Platform branch**: Select **Python 3.14 running on 64bit Amazon Linux 2023**
@@ -33,7 +33,7 @@ In this section, we will create an Elastic Beanstalk environment and deploy a sa
    - We will deploy AWS sample application for testing
    - Later we'll deploy custom Flask app in Section 3.2
 
-![Platform Selection](/images/3.deployapp/0003.png)
+![Platform Selection]({{< relref "/" >}}images/3.deployapp/0003.png)
 
 8. **Presets**: Select **Single instance (free tier eligible)**
    - Suitable for test/learning environment
@@ -42,7 +42,7 @@ In this section, we will create an Elastic Beanstalk environment and deploy a sa
 
 {{% notice warning %}}**This workshop uses Single Instance mode** (without Load Balancer). If you want a production environment with Load Balancer, see the "Upgrade to Load Balanced Mode" section below.{{% /notice %}}
 
-![Presets](/images/3.deployapp/0004.png)
+![Presets]({{< relref "/" >}}images/3.deployapp/0004.png)
 
 #### 💡 Upgrade to Load Balanced Mode (Optional)
 
@@ -79,25 +79,25 @@ If you want to deploy a production environment with Load Balancer:
 
 If you don't have a Service role yet:
 
-![Service Access Empty](/images/3.deployapp/0005.png)
+![Service Access Empty]({{< relref "/" >}}images/3.deployapp/0005.png)
 
 1. Select **Create and use new service role**
 
-![Create Service Role](/images/3.deployapp/0006.png)
+![Create Service Role]({{< relref "/" >}}images/3.deployapp/0006.png)
 
 2. AWS automatically creates role named `aws-elasticbeanstalk-service-role`
 
-![Service Role Creating](/images/3.deployapp/0007.png)
+![Service Role Creating]({{< relref "/" >}}images/3.deployapp/0007.png)
 
 3. Role will have these policies:
    - `AWSElasticBeanstalkEnhancedHealth`
    - `AWSElasticBeanstalkManagedUpdatesCustomerRolePolicy`
 
-![Service Role Policies](/images/3.deployapp/0008.png)
+![Service Role Policies]({{< relref "/" >}}images/3.deployapp/0008.png)
 
 4. After creation, select the newly created role in dropdown
 
-![Service Role Selected](/images/3.deployapp/0009.png)
+![Service Role Selected]({{< relref "/" >}}images/3.deployapp/0009.png)
 
 **EC2 Instance Profile**
 
@@ -105,22 +105,22 @@ If you don't have an EC2 instance profile yet:
 
 1. Select **Create and use new EC2 instance profile**
 
-![Create Instance Profile](/images/3.deployapp/0010.png)
+![Create Instance Profile]({{< relref "/" >}}images/3.deployapp/0010.png)
 
 2. AWS automatically creates instance profile named `aws-elasticbeanstalk-ec2-role`
 
-![Instance Profile Creating](/images/3.deployapp/0011.png)
+![Instance Profile Creating]({{< relref "/" >}}images/3.deployapp/0011.png)
 
 3. Instance profile will have these policies:
    - `AWSElasticBeanstalkWebTier`
    - `AWSElasticBeanstalkWorkerTier`
    - `AWSElasticBeanstalkMulticontainerDocker`
 
-![Instance Profile Policies](/images/3.deployapp/0012.png)
+![Instance Profile Policies]({{< relref "/" >}}images/3.deployapp/0012.png)
 
 4. After creation, select the instance profile in dropdown
 
-![Instance Profile Selected](/images/3.deployapp/0013.png)
+![Instance Profile Selected]({{< relref "/" >}}images/3.deployapp/0013.png)
 
 **EC2 Key Pair**
 
@@ -128,7 +128,7 @@ If you don't have an EC2 instance profile yet:
    - This key pair was created in Section 2.1
    - Used for SSH access to EC2 instance if troubleshooting needed
 
-![Key Pair Selected](/images/3.deployapp/0014.png)
+![Key Pair Selected]({{< relref "/" >}}images/3.deployapp/0014.png)
 
 2. Click **Next** to configure networking
 
@@ -145,7 +145,7 @@ If you don't have an EC2 instance profile yet:
 3. **Instance subnets**: Select one availability zone
    - Example: `ap-southeast-2a` with subnet `172.31.0.0/20`
 
-![Networking Configuration](/images/3.deployapp/0015.png)
+![Networking Configuration]({{< relref "/" >}}images/3.deployapp/0015.png)
 
 **Database and Tags**
 
@@ -154,7 +154,7 @@ If you don't have an EC2 instance profile yet:
 
 2. **Tags**: Leave empty (optional)
 
-![Database and Tags](/images/3.deployapp/0016.png)
+![Database and Tags]({{< relref "/" >}}images/3.deployapp/0016.png)
 
 3. Click **Next** to configure instance
 
@@ -168,7 +168,7 @@ If you don't have an EC2 instance profile yet:
 4. **IMDSv1**: **Disabled** (recommended)
 5. **IMDSv2**: Enabled
 
-![Instance Configuration](/images/3.deployapp/0017.png)
+![Instance Configuration]({{< relref "/" >}}images/3.deployapp/0017.png)
 
 **Capacity**
 
@@ -176,7 +176,7 @@ If you don't have an EC2 instance profile yet:
 2. **Fleet composition**: On-Demand instances
 3. **Architecture**: x86_64
 
-![Capacity](/images/3.deployapp/0018.png)
+![Capacity]({{< relref "/" >}}images/3.deployapp/0018.png)
 
 4. **Instance types**: Select only `t3.micro`
    - Remove `t3.small` if present (not free tier eligible)
@@ -187,7 +187,7 @@ If you don't have an EC2 instance profile yet:
 
 5. **AMI ID**: Leave as default (Amazon Linux 2023 for Python)
 
-![Instance Types](/images/3.deployapp/0019.png)
+![Instance Types]({{< relref "/" >}}images/3.deployapp/0019.png)
 
 6. Click **Next** to configure monitoring
 
@@ -198,7 +198,7 @@ If you don't have an EC2 instance profile yet:
 1. **Health reporting**: Enhanced
 2. **CloudWatch Logs**: Disabled (to save costs)
 
-![Monitoring](/images/3.deployapp/0020.png)
+![Monitoring]({{< relref "/" >}}images/3.deployapp/0020.png)
 
 **Managed Platform Updates**
 
@@ -206,7 +206,7 @@ If you don't have an EC2 instance profile yet:
 2. **Update window**: Tuesday, 19:45 UTC, 1 hour
 3. **Update level**: Minor and patch
 
-![Managed Updates](/images/3.deployapp/0021.png)
+![Managed Updates]({{< relref "/" >}}images/3.deployapp/0021.png)
 
 **Rolling Updates and Deployments**
 
@@ -214,7 +214,7 @@ If you don't have an EC2 instance profile yet:
    - Deploy all instances simultaneously
    - Brief downtime
 
-![Rolling Updates](/images/3.deployapp/0022.png)
+![Rolling Updates]({{< relref "/" >}}images/3.deployapp/0022.png)
 
 **Platform Software**
 
@@ -223,7 +223,7 @@ If you don't have an EC2 instance profile yet:
 3. **Logs retention**: 7 days
 4. **NumThreads**: 15
 
-![Platform Software](/images/3.deployapp/0023.png)
+![Platform Software]({{< relref "/" >}}images/3.deployapp/0023.png)
 
 5. Click **Next** to review
 
@@ -245,13 +245,13 @@ When environment creation is complete:
 1. **Health status**: Ok (green)
 2. **Domain URL**: Public URL displayed
 
-![Environment Created](/images/3.deployapp/0030.png)
+![Environment Created]({{< relref "/" >}}images/3.deployapp/0030.png)
 
 3. Click on **Domain** to access the application
 
 You will see the AWS Elastic Beanstalk sample application welcome page.
 
-![Sample App Running](/images/3.deployapp/0031.png)
+![Sample App Running]({{< relref "/" >}}images/3.deployapp/0031.png)
 
 {{% notice success %}}
 **Congratulations!** Elastic Beanstalk environment is ready. Now we can deploy custom Flask application in Section 3.2.
