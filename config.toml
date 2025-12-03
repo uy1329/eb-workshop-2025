@@ -1,6 +1,9 @@
 # Change the default theme to be use when building the site with Hugo
 theme = "hugo-theme-learn"
 
+# Base URL for GitHub Pages
+baseURL = "https://uy1329.github.io/eb-workshop-2025/"
+
 # For search functionality
 [outputs]
 home = [ "HTML", "RSS", "JSON"]
